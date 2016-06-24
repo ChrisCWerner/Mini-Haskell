@@ -1,4 +1,4 @@
-﻿[TODO] novas expressoes logicas (and, or, not), expressoes envolvendo 
+﻿[DONE] novas expressoes logicas (and, or, not), expressoes envolvendo 
 	inteiros (*, /, -) e operadores relacionais (==, !=, <, >, <=, >=)
 
 [TODO] casos de testes para as expressoes Let e Aplicacao de Funcao
