@@ -2,13 +2,9 @@ package br.unb.cic.mh;
 
 import br.unb.cic.mh.visitor.Visitor;
 
-/**
- * ???????
- * @author Christian
- */
-public class ValorLista extends ValorConcreto<ValorLista> {
+public abstract class ValorLista extends ValorConcreto<ValorLista> {
 
-	public ValorLista(ValorLista valor){
+	public ValorLista(ValorLista valor) {
 		super(valor);
 	}
 
