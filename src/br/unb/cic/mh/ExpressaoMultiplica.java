@@ -2,7 +2,7 @@ package br.unb.cic.mh;
 
 import br.unb.cic.mh.visitor.Visitor;
 
-public class ExpressaoMultiplica extends ExpressaoSoma{
+public class ExpressaoMultiplica extends ExpressaoBinaria{
 
 	public ExpressaoMultiplica(Expressao s1, Expressao s2) {
 		super(s1, s2);
@@ -16,6 +16,22 @@ public class ExpressaoMultiplica extends ExpressaoSoma{
 		return new ValorInteiro(v1.getValor() * v2.getValor());
 	}
 	
+	@Override
+	public Tipo tipo() {
+		Tipo t1 = sub1.tipo();
+		Tipo t2 = sub2.tipo();
+		
+		if(t1.equals(Tipo.INTEIRO) && t2.equals(Tipo.INTEIRO)) {
+			return Tipo.INTEIRO;
+		}
+		return Tipo.ERRO;
+	}
+
+	@Override
+	public boolean checarTipo() {
+		return tipo().equals(Tipo.INTEIRO);
+	}
+
 	@Override
 	public void aceitar(Visitor v) {
 		v.visitar(this);

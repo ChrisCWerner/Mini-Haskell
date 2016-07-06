@@ -2,12 +2,6 @@ package br.unb.cic.mh;
 
 import br.unb.cic.mh.visitor.Visitor;
 
-/**
- * As expressoes que são restritas a apenas numeros inteiros, como subtração multiplicação e divisão
- * herdaram da classe ExpressaoSoma e reescrevendo apenas o método avaliar
- * Isso evitará duplicação de código
- */
-
 public class ExpressaoSoma extends ExpressaoBinaria {
 
 	public ExpressaoSoma(Expressao s1, Expressao s2) {

@@ -12,7 +12,7 @@ public class TesteExpressaoSubtrai {
 		ValorInteiro v5  = new ValorInteiro(5);
 		ValorInteiro v10 = new ValorInteiro(10);
 		
-		ExpressaoSoma subtrai = new ExpressaoSubtrai(v10, v5);
+		ExpressaoSubtrai subtrai = new ExpressaoSubtrai(v10, v5);
 		
 		ValorInteiro res = (ValorInteiro)subtrai.avaliar();
 		Assert.assertEquals(new Integer(5), res.getValor());
@@ -24,8 +24,8 @@ public class TesteExpressaoSubtrai {
 		ValorInteiro v10 = new ValorInteiro(10);
 		ValorInteiro v20 = new ValorInteiro(20);
 		
-		ExpressaoSoma subtrai1 = new ExpressaoSubtrai(v10, v5);
-		ExpressaoSoma subtrai2 = new ExpressaoSubtrai(v20,subtrai1);
+		ExpressaoSubtrai subtrai1 = new ExpressaoSubtrai(v10, v5);
+		ExpressaoSubtrai subtrai2 = new ExpressaoSubtrai(v20,subtrai1);
 		
 		ValorInteiro res = (ValorInteiro)subtrai2.avaliar();
 		

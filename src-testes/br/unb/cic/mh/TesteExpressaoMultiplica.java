@@ -12,7 +12,7 @@ public class TesteExpressaoMultiplica {
 		ValorInteiro v5  = new ValorInteiro(5);
 		ValorInteiro v10 = new ValorInteiro(10);
 		
-		ExpressaoSoma multiplicacao = new ExpressaoMultiplica(v5, v10);
+		ExpressaoMultiplica multiplicacao = new ExpressaoMultiplica(v5, v10);
 		
 		ValorInteiro res = (ValorInteiro)multiplicacao.avaliar();
 		Assert.assertEquals(new Integer(50), res.getValor());
@@ -24,8 +24,8 @@ public class TesteExpressaoMultiplica {
 		ValorInteiro v10 = new ValorInteiro(10);
 		ValorInteiro v20 = new ValorInteiro(20);
 		
-		ExpressaoSoma m1 = new ExpressaoMultiplica(v5, v10);
-		ExpressaoSoma m2 = new ExpressaoMultiplica(m1, v20);
+		ExpressaoMultiplica m1 = new ExpressaoMultiplica(v5, v10);
+		ExpressaoMultiplica m2 = new ExpressaoMultiplica(m1, v20);
 		
 		ValorInteiro res = (ValorInteiro)m2.avaliar();
 		
