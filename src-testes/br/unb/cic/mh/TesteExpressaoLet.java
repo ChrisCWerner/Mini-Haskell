@@ -9,7 +9,7 @@ public class TesteExpressaoLet {
 
 	@Test
 	public void testeExpressaoLetSimples() {
-		// let x = 10
+		// let x = 5
 		// in x + x
 		ExpressaoLet let1 = new ExpressaoLet("x", new ValorInteiro(5),
 				new ExpressaoSoma(new ExpressaoRefId("x"), new ExpressaoRefId("x")));
@@ -28,6 +28,23 @@ public class TesteExpressaoLet {
 		
 		
 		assertEquals(vi(15), letExterno.avaliar());
+	}
+	//"let x = 10 in let x = 5 in x + x"
+	@Test
+	public void DONETesteExpressaoLet() {
+		ExpressaoLet letInterno = new ExpressaoLet("x", vi(5), 
+				soma(ref("x"), ref("x")));  
+	
+		ExpressaoLet letExterno = new ExpressaoLet("x", vi(10), letInterno);
+		
+		//Testa o valor do LetInterno:
+		assertEquals(vi(10), letInterno.avaliar());
+		//Testa o valor do LetExterno:
+		assertEquals(vi(10), letExterno.avaliar());
+		//Pode-se concluir que nesse caso, quando o valor de x é sobrescrito:
+		// como por exemplo let x = 10 in let x = 5 in x + x;
+		//O valor de x que é utilizado na soma x + x é o ultimo valor referencidado a x
+		//Logo o resultado da soma é igual a 10.
 	}
 	
 	public ExpressaoSoma soma(Expressao exp1, Expressao exp2) {
