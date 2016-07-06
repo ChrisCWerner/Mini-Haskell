@@ -2,10 +2,12 @@ package br.unb.cic.mh;
 
 import br.unb.cic.mh.visitor.Visitor;
 
-public abstract class ValorLista extends ValorConcreto<ValorLista> {
+public class ValorLista extends ValorConcreto<ValorLista> {
 
-	public ValorLista(ValorLista valor) {
-		super(valor);
+	protected int index;
+	
+	public ValorLista(ValorLista lista) {
+		super(lista);
 	}
 
 	@Override
@@ -16,6 +18,18 @@ public abstract class ValorLista extends ValorConcreto<ValorLista> {
 	@Override
 	public void aceitar(Visitor v) {
 		v.visitar(this);
+	}
+	
+	public boolean isListaVazia(){
+		return this instanceof ValorListaVazia;
+	}
+
+	public int getIndex() {
+		return index;
+	}
+
+	public void setIndex(int index) {
+		this.index = index;
 	}
 	
 }
