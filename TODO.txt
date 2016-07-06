@@ -1,10 +1,10 @@
 ﻿[DONE] novas expressoes logicas (and, or, not), expressoes envolvendo 
 	inteiros (*, /, -) e operadores relacionais (==, !=, <, >, <=, >=)
 
-[TODO] casos de testes para as expressoes Let e Aplicacao de Funcao
+[DONE] casos de testes para as expressoes Let e Aplicacao de Funcao
 	-> o que ocorre com a expressao "let x = 10 in let x = 5 in x + x" ?
-[DONE]	-> o que ocorre com "fat 5", onde 
-	  	"fat n = if (n == 0) then 1 else n * fat (n - 1)" ?
+	-> o que ocorre com "fat 5", onde 
+	  "fat n = if (n == 0) then 1 else n * fat (n - 1)" ?
 
 [TODO] Escrever mais testes para a expressão *aplicação de função*
 
