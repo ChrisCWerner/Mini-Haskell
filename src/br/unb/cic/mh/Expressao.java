@@ -6,6 +6,8 @@ enum Tipo {
 	BOOLEANO,
 	INTEIRO,
 	LISTA,
+	LISTA_INTEIRO,
+	LISTA_BOOLEANO,
 	ERRO;
 }
 
