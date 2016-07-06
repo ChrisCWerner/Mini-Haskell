@@ -6,7 +6,7 @@
 	-> o que ocorre com "fat 5", onde 
 	  "fat n = if (n == 0) then 1 else n * fat (n - 1)" ?
 
-[TODO] Escrever mais testes para a expressão *aplicação de função*
+[DONE] Escrever mais testes para a expressão *aplicação de função*
 
 [TODO] Corrigir os visitors implementados, mas que estão "quebrados" na 
 	versão 03 da implementação do projeto MiniHaskell.
