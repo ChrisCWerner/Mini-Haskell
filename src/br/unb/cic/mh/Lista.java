@@ -130,8 +130,7 @@ public class Lista implements Expressao {
 
 	@Override
 	public Valor avaliar() {
-		// TODO Auto-generated method stub
-		return null;
+		return lista;
 	}
 
 	@Override
