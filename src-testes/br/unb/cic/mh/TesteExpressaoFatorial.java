@@ -8,6 +8,16 @@ import org.junit.Test;
 public class TesteExpressaoFatorial {
 
 	@Test
+	public void testFatorial5() {
+		ValorInteiro v5  = new ValorInteiro(5);
+		
+		ExpressaoFatorial fat5 = new ExpressaoFatorial(v5);
+		
+		ValorInteiro res = (ValorInteiro)fat5.avaliar();
+		Assert.assertEquals(new Integer(120), res.getValor());
+	}
+	
+	@Test
 	public void testFatorial() {
 		ValorInteiro v6  = new ValorInteiro(6);
 		
