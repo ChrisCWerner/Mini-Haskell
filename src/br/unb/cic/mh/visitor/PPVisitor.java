@@ -18,6 +18,7 @@ import br.unb.cic.mh.ExpressaoOr;
 import br.unb.cic.mh.ExpressaoRefId;
 import br.unb.cic.mh.ExpressaoSoma;
 import br.unb.cic.mh.ExpressaoSubtrai;
+import br.unb.cic.mh.Lista;
 import br.unb.cic.mh.ValorBooleano;
 import br.unb.cic.mh.ValorInteiro;
 import br.unb.cic.mh.ValorLista;
@@ -151,6 +152,12 @@ public class PPVisitor implements Visitor {
 
 	@Override
 	public void visitar(ExpressaoFatorial expressaoFatorial) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visitar(Lista lista) {
 		// TODO Auto-generated method stub
 		
 	}

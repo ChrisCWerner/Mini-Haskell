@@ -16,7 +16,7 @@
 	Em Haskell, seria algo como:
 	  "data List a = Nill | a (List a)"
 
-[TODO] Escreva funções que manipulam listas (tamanho, elemento em uma posicao 
+[DONE] Escreva funções que manipulam listas (tamanho, elemento em uma posicao 
 especifica, ...).
 
 [TODO] Implementar um parser e um programa para interpretar MiniHaskell

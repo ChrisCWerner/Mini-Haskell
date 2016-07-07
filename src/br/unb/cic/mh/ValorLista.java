@@ -4,7 +4,7 @@ import br.unb.cic.mh.visitor.Visitor;
 
 public class ValorLista extends ValorConcreto<ValorLista> {
 
-	protected int index;
+	private int index;
 	
 	public ValorLista(ValorLista lista) {
 		super(lista);
@@ -20,7 +20,7 @@ public class ValorLista extends ValorConcreto<ValorLista> {
 		v.visitar(this);
 	}
 	
-	public boolean isListaVazia(){
+	public boolean isVazia(){
 		return this instanceof ValorListaVazia;
 	}
 

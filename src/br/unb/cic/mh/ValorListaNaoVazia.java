@@ -2,8 +2,8 @@ package br.unb.cic.mh;
 
 public class ValorListaNaoVazia extends ValorLista {
 
-	protected ValorConcreto valorConcreto;
-	protected ValorLista valorLista;
+	private ValorConcreto valorConcreto;
+	private ValorLista valorLista;
 	
 	public ValorListaNaoVazia(ValorConcreto valorConcreto, ValorLista valorLista){
 		super(valorLista);
@@ -19,5 +19,10 @@ public class ValorListaNaoVazia extends ValorLista {
 	public ValorLista getValorLista() {
 		return valorLista;
 	}
+
+	public void setValorLista(ValorLista valorLista) {
+		this.valorLista = valorLista;
+	}	
+	
 
 }
