@@ -25,16 +25,20 @@ import br.unb.cic.mh.ValorLista;
 public class PPVisitor implements Visitor {
 
 	@Override
-	public void visitar(ExpressaoIfThenElse exp) {
-		
+	public void visitar(ValorInteiro exp) {
+		System.out.println(exp.getValor());
 	}
 
 	@Override
-	public void visitar(ExpressaoLet exp) {
-		// TODO Auto-generated method stub
-		
+	public void visitar(ValorBooleano exp) {
+		if(exp.getValor()) {
+			System.out.println("True");
+		}
+		else {
+			System.out.println("False");
+		}
 	}
-
+	
 	@Override
 	public void visitar(ExpressaoSoma exp) {
 		System.out.print("(");
@@ -42,6 +46,113 @@ public class PPVisitor implements Visitor {
 		System.out.println(" + ");
 		exp.getSub2().aceitar(this);
 		System.out.println(")");
+	}
+	
+	@Override
+	public void visitar(ExpressaoSubtrai exp) {
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.println(" - ");
+		exp.getSub2().aceitar(this);
+		System.out.println(")");
+		
+	}
+
+	@Override
+	public void visitar(ExpressaoMultiplica exp) {
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.println(" * ");
+		exp.getSub2().aceitar(this);
+		System.out.println(")");
+	}
+
+	@Override
+	public void visitar(ExpressaoDivide exp) {
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.println(" / ");
+		exp.getSub2().aceitar(this);
+		System.out.println(")");
+	}
+	
+	@Override
+	public void visitar(ExpressaoMaiorQue exp) {
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.println(" > ");
+		exp.getSub2().aceitar(this);
+		System.out.println(")");
+	}
+
+	@Override
+	public void visitar(ExpressaoMaiorOuIgual exp) {
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.println(" >= ");
+		exp.getSub2().aceitar(this);
+		System.out.println(")");
+	}
+
+	@Override
+	public void visitar(ExpressaoMenorQue exp) {
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.println(" < ");
+		exp.getSub2().aceitar(this);
+		System.out.println(")");
+	}
+
+	@Override
+	public void visitar(ExpressaoMenorOuIgual exp) {
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.println(" <= ");
+		exp.getSub2().aceitar(this);
+		System.out.println(")");
+		
+	}
+	
+	@Override
+	public void visitar(ExpressaoAnd exp) {
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.println(" . ");
+		exp.getSub2().aceitar(this);
+		System.out.println(")");
+	}
+	
+	@Override
+	public void visitar(ExpressaoOr exp) {
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.println(" + ");
+		exp.getSub2().aceitar(this);
+		System.out.println(")");
+	}
+	
+	@Override
+	public void visitar(ExpressaoNot exp) {
+		System.out.print("~");
+		System.out.println("(");
+		exp.getSub1().aceitar(this);
+		System.out.println(")");
+	}
+	
+	@Override
+	public void visitar(ExpressaoIfThenElse exp) {
+		System.out.print("if ");
+		exp.getCondicao().aceitar(this);
+		System.out.println(" then ");
+		exp.getClausulaThen().aceitar(this);
+		System.out.println(" else ");
+		exp.getClausulaElse().aceitar(this);
+	}
+
+	@Override
+	public void visitar(ExpressaoLet exp) {
+		System.out.print("Let ");
+		exp.aceitar(this);
 	}
 
 	@Override
@@ -57,34 +168,7 @@ public class PPVisitor implements Visitor {
 	}
 
 	@Override
-	public void visitar(ValorInteiro exp) {
-		System.out.println(exp.getValor());
-	}
-
-	@Override
-	public void visitar(ValorBooleano exp) {
-		if(exp.getValor()) {
-			System.out.println("True");
-		}
-		else {
-			System.out.println("False");
-		}
-	}
-
-	@Override
 	public void visitar(ValorLista exp) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void visitar(ExpressaoAnd exp) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void visitar(ExpressaoNot expressaoNot) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -96,55 +180,7 @@ public class PPVisitor implements Visitor {
 	}
 
 	@Override
-	public void visitar(ExpressaoSubtrai expressaoSubtrai) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void visitar(ExpressaoMultiplica expressaoMultiplica) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void visitar(ExpressaoDivide expressaoDivide) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void visitar(ExpressaoOr expressaoOr) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public void visitar(ExpressaoDiferenca expressaoDiferenca) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void visitar(ExpressaoMaiorQue expressaoMaiorQue) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void visitar(ExpressaoMaiorOuIgual expressaoMaiorOuIgual) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void visitar(ExpressaoMenorQue expressaoMenorQue) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void visitar(ExpressaoMenorOuIgual expressaoMenorOuIgual) {
 		// TODO Auto-generated method stub
 		
 	}
