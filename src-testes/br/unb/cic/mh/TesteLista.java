@@ -24,7 +24,7 @@ public class TesteLista {
 		
 		Lista lista = new Lista();
 		
-		lista.add(v(4));
+		Assert.assertEquals(Tipo.INTEIRO, lista.add(v(4)));
 		
 		Assert.assertEquals(1, lista.getSize());
 		Assert.assertEquals(v(4), lista.returnFirstElement());
@@ -45,9 +45,11 @@ public class TesteLista {
 		Assert.assertEquals(v(6), vl.getValorConcreto());
 		
 		
-		Assert.assertEquals(null, lista.find(3));
+		Assert.assertEquals(null, lista.find(v(3)));
 		
 		Assert.assertEquals(Tipo.INTEIRO, lista.add(v(7)));
+		
+		Assert.assertEquals(1, lista.find(v(6)).getIndex());
 		
 		Assert.assertEquals(Tipo.ERRO, lista.add(v(true)));
 		Assert.assertEquals(3, lista.getSize());
@@ -76,17 +78,43 @@ public class TesteLista {
 		Assert.assertEquals(null, lista.remove(-1));
 		Assert.assertEquals(null, lista.remove(8));
 		Assert.assertEquals(7, lista.getSize());
+		
+		vl = (ValorListaNaoVazia) lista.remove(0);
+		
+		Assert.assertEquals(v(9), vl.getValorConcreto());
 
 		vl = (ValorListaNaoVazia) lista.remove(3);
 		
-		Assert.assertEquals(v(6), vl.getValorConcreto());
-		Assert.assertEquals(6, lista.getSize());
-		Assert.assertEquals(v(5), ((ValorListaNaoVazia) lista.find(3)).getValorConcreto());
-		lista.print();
+		Assert.assertEquals(v(5), vl.getValorConcreto());
+		Assert.assertEquals(5, lista.getSize());
+		Assert.assertEquals(v(4), ((ValorListaNaoVazia) lista.find(3)).getValorConcreto());
 		
-		
+		Lista lista2 = new Lista((ValorLista) lista.avaliar());
+		Assert.assertEquals(5, lista2.getSize());
 	}
 	
+	@Test
+	public void TesteAddEntre() {
+		
+		Lista lista = new Lista();
+
+		lista.add(v(9));
+		lista.add(v(8));
+		lista.add(v(7));
+		lista.add(v(5));
+		lista.add(v(4));
+		lista.add(v(3));
+		
+		lista.add(v(6), 3);
+		Assert.assertEquals(7, lista.getSize());
+
+		lista.add(v(10), -1);
+		Assert.assertEquals(8, lista.getSize());
+
+		lista.add(v(2), 90);
+		Assert.assertEquals(9, lista.getSize());
+		
+	}
 	
 	
 	public ValorBooleano v(boolean valor) {
